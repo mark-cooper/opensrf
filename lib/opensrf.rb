@@ -7,9 +7,11 @@ module Opensrf
   require 'uri'
   require 'curb'
   require 'json'
+  require 'digest/md5'
   require 'opensrf/headers'
   require 'opensrf/message'
   require 'opensrf/request'
   require 'opensrf/response'
+  require 'opensrf/session'
 
 end

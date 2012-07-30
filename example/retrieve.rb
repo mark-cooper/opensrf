@@ -1,4 +1,13 @@
 require 'opensrf'
+require 'pp'
+
+host = '50.19.218.214'
+session = Opensrf::Session.new(host)
+# pp session.login 'xxx', '123'
+token = session.login 'staff', 'demo123'
+result = session.request 'open-ils.actor', 'open-ils.actor.org_tree.retrieve', token
+pp result
+__END__
 
 # method = 'open-ils.search.config.copy_status.retrieve.all'
 method = 'open-ils.search.biblio.record.mods_slim.retrieve'
