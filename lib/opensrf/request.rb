@@ -27,7 +27,6 @@ module Opensrf
     def send
       raise 'HEADERS and MESSAGE DATA must be set ...' unless @headers and @message
       request = @prefix + URI.escape(@message.to_json.to_s)
-      pp request
       url = "#{@protocol}://" + @host + @translator
       begin
         c = Curl::Easy.http_post(url, request) do |curl| 
